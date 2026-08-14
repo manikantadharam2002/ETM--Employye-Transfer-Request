@@ -24,7 +24,6 @@
                         showTitleInHeaderContent="false"
                         useTwoColumnsForLargeScreen="true">
 
-
                         <!-- ================================================= -->
                         <!-- HEADER TITLE -->
                         <!-- ================================================= -->
@@ -33,73 +32,12 @@
 
                             <uxap:ObjectPageHeader
                                 id="headerForTransfer"
-                                objectTitle="Employee Transfer Request"
+                                objectTitle="{= ${context>/TransferRequestID} + ' – Employee Transfer Request' }"
+                                objectSubtitle="{= ${context>/EmployeeName} + ' – ' + ${context>/EmployeeID} + ' – ' + ${context>/Designation} + ' – ' + ${context>/Department} }"
                                 showMarkers="true"
-                                markFavorite="true">
-
-                            </uxap:ObjectPageHeader>
+                                markFavorite="true"/>
 
                         </uxap:headerTitle>
-
-
-                        <!-- ================================================= -->
-                        <!-- HEADER CONTENT -->
-                        <!-- ================================================= -->
-
-                        <uxap:headerContent>
-
-                            <layout:VerticalLayout
-                                class="sapUiMediumMarginEnd">
-
-                                <ObjectStatus
-                                    title="Transfer Request ID"
-                                    text="{context>/TransferRequestID}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                                <ObjectStatus
-                                    title="Employee ID"
-                                    text="{context>/EmployeeID}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                                <ObjectStatus
-                                    title="Department"
-                                    text="{context>/Department}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                                <ObjectStatus
-                                    title="Required Site"
-                                    text="{context>/RequiredSite}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                            </layout:VerticalLayout>
-
-
-                            <layout:VerticalLayout
-                                class="sapUiLargeMarginBegin">
-
-                                <ObjectStatus
-                                    title="Required Trade"
-                                    text="{context>/RequiredTrade}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                                <ObjectStatus
-                                    title="Relieving Trade"
-                                    text="{context>/RelievingTrade}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                                <ObjectStatus
-                                    title="Budgeted"
-                                    text="{context>/Budgeted}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                                <ObjectStatus
-                                    title="Requested By"
-                                    text="{context>/RequestedBy}"
-                                    class="sapUiMediumMarginBottom"/>
-
-                            </layout:VerticalLayout>
-
-                        </uxap:headerContent>
 
 
                         <!-- ================================================= -->
@@ -130,163 +68,103 @@
                                             <layout:Grid
                                                 defaultSpan="XL4 L4 M6 S12"
                                                 hSpacing="1"
-                                                vSpacing="1">
-
+                                                vSpacing="1"
+                                                width="100%">
 
                                                 <!-- Transfer Request ID -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Transfer Request ID:"/>
-
-                                                    <Text
-                                                        text="{context>/TransferRequestID}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Transfer Request ID"
+                                                    text="{context>/TransferRequestID}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Employee ID -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Employee ID:"/>
-
-                                                    <Text
-                                                        text="{context>/EmployeeID}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Employee ID"
+                                                    text="{context>/EmployeeID}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Employee Name -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Employee Name:"/>
-
-                                                    <Text
-                                                        text="{context>/EmployeeName}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Employee Name"
+                                                    text="{context>/EmployeeName}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Department -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Department:"/>
-
-                                                    <Text
-                                                        text="{context>/Department}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Department"
+                                                    text="{context>/Department}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Designation -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Designation:"/>
-
-                                                    <Text
-                                                        text="{context>/Designation}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Designation"
+                                                    text="{context>/Designation}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Requested By -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Requested By:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestedBy}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Requested By"
+                                                    text="{context>/RequestedBy}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Trade -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Trade:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredTrade}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Trade"
+                                                    text="{context>/RequiredTrade}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Relieving Trade -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Trade:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingTrade}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Trade"
+                                                    text="{context>/RelievingTrade}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Site"
+                                                    text="{context>/RequiredSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Relieving Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Site"
+                                                    text="{context>/RelievingSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Budgeted -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Budgeted:"/>
-
-                                                    <Text
-                                                        text="{context>/Budgeted}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Budgeted"
+                                                    text="{context>/Budgeted}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Additional Details -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Additional Details:"/>
-
-                                                    <Text
-                                                        text="{context>/AdditionalDetails}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Additional Details"
+                                                    text="{context>/AdditionalDetails}"
+                                                    class="sapUiTinyMarginBottom"/>
 
                                             </layout:Grid>
 
@@ -325,124 +203,79 @@
                                             <layout:Grid
                                                 defaultSpan="XL4 L4 M6 S12"
                                                 hSpacing="1"
-                                                vSpacing="1">
-
+                                                vSpacing="1"
+                                                width="100%">
 
                                                 <!-- Request Type -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Request Type:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestType}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Request Type"
+                                                    text="{context>/RequestType}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Request Status -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Request Status:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestStatus}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Request Status"
+                                                    text="{context>/RequestStatus}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Requested By -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Requested By:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestedBy}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Requested By"
+                                                    text="{context>/RequestedBy}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Requested Date -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Requested Date:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestedDate}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Requested Date"
+                                                    text="{context>/RequestedDate}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Department -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Department:"/>
-
-                                                    <Text
-                                                        text="{context>/Department}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Department"
+                                                    text="{context>/Department}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Site"
+                                                    text="{context>/RequiredSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Relieving Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Site"
+                                                    text="{context>/RelievingSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Trade -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Trade:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredTrade}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Trade"
+                                                    text="{context>/RequiredTrade}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Relieving Trade -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Trade:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingTrade}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Trade"
+                                                    text="{context>/RelievingTrade}"
+                                                    class="sapUiTinyMarginBottom"/>
 
                                             </layout:Grid>
 
@@ -465,72 +298,47 @@
                                             <layout:Grid
                                                 defaultSpan="XL4 L4 M6 S12"
                                                 hSpacing="1"
-                                                vSpacing="1">
-
+                                                vSpacing="1"
+                                                width="100%">
 
                                                 <!-- Allotted Number -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Allotted Number:"/>
-
-                                                    <Text
-                                                        text="{context>/AllottedNumber}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Allotted Number"
+                                                    text="{context>/AllottedNumber}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Active Available -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Active Available:"/>
-
-                                                    <Text
-                                                        text="{context>/ActiveAvailable}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Active Available"
+                                                    text="{context>/ActiveAvailable}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Cost Centre -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Cost Centre:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredCostCentre}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Cost Centre"
+                                                    text="{context>/RequiredCostCentre}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Budgeted -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Budgeted:"/>
-
-                                                    <Text
-                                                        text="{context>/Budgeted}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Budgeted"
+                                                    text="{context>/Budgeted}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Additional Details -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Additional Details:"/>
-
-                                                    <Text
-                                                        text="{context>/AdditionalDetails}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Additional Details"
+                                                    text="{context>/AdditionalDetails}"
+                                                    class="sapUiTinyMarginBottom"/>
 
                                             </layout:Grid>
 
@@ -553,85 +361,55 @@
                                             <layout:Grid
                                                 defaultSpan="XL4 L4 M6 S12"
                                                 hSpacing="1"
-                                                vSpacing="1">
+                                                vSpacing="1"
+                                                width="100%">
 
+                                                <!-- Request Type -->
 
-                                                <!-- Transfer Type -->
-
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Request Type:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestType}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Request Type"
+                                                    text="{context>/RequestType}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Requested Date -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Requested Date:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestedDate}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Requested Date"
+                                                    text="{context>/RequestedDate}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
-                                                <!-- Current Site -->
+                                                <!-- Relieving Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Site"
+                                                    text="{context>/RelievingSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Site"
+                                                    text="{context>/RequiredSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
-                                                <!-- Current Trade -->
+                                                <!-- Relieving Trade -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Trade:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingTrade}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Trade"
+                                                    text="{context>/RelievingTrade}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Trade -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Trade:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredTrade}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Trade"
+                                                    text="{context>/RequiredTrade}"
+                                                    class="sapUiTinyMarginBottom"/>
 
                                             </layout:Grid>
 
@@ -654,111 +432,71 @@
                                             <layout:Grid
                                                 defaultSpan="XL4 L4 M6 S12"
                                                 hSpacing="1"
-                                                vSpacing="1">
-
+                                                vSpacing="1"
+                                                width="100%">
 
                                                 <!-- Employee Name -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Employee Name:"/>
-
-                                                    <Text
-                                                        text="{context>/EmployeeName}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Employee Name"
+                                                    text="{context>/EmployeeName}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Employee ID -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Employee ID:"/>
-
-                                                    <Text
-                                                        text="{context>/EmployeeID}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Employee ID"
+                                                    text="{context>/EmployeeID}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Department -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Department:"/>
-
-                                                    <Text
-                                                        text="{context>/Department}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Department"
+                                                    text="{context>/Department}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Designation -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Designation:"/>
-
-                                                    <Text
-                                                        text="{context>/Designation}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Designation"
+                                                    text="{context>/Designation}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Requested By -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Requested By:"/>
-
-                                                    <Text
-                                                        text="{context>/RequestedBy}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Requested By"
+                                                    text="{context>/RequestedBy}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Required Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Required Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RequiredSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Required Site"
+                                                    text="{context>/RequiredSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Relieving Site -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Relieving Site:"/>
-
-                                                    <Text
-                                                        text="{context>/RelievingSite}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Relieving Site"
+                                                    text="{context>/RelievingSite}"
+                                                    class="sapUiTinyMarginBottom"/>
 
 
                                                 <!-- Additional Details -->
 
-                                                <VBox>
-
-                                                    <Label
-                                                        text="Additional Details:"/>
-
-                                                    <Text
-                                                        text="{context>/AdditionalDetails}"/>
-
-                                                </VBox>
+                                                <ObjectAttribute
+                                                    title="Additional Details"
+                                                    text="{context>/AdditionalDetails}"
+                                                    class="sapUiTinyMarginBottom"/>
 
                                             </layout:Grid>
 
@@ -766,10 +504,6 @@
 
                                     </uxap:ObjectPageSubSection>
 
-
-                                    <!-- ================================================= -->
-                                    <!-- CEO APPROVAL -->
-                                    <!-- ================================================= -->
 
                                     <!-- ================================================= -->
                                     <!-- APPROVAL INFORMATION -->
@@ -783,18 +517,21 @@
                                         <uxap:blocks>
 
                                             <!-- ============================================= -->
-                                            <!-- APPROVAL TRAIL CARD                          -->
+                                            <!-- APPROVAL TRAIL CARD -->
                                             <!-- ============================================= -->
 
                                             <Panel
                                                 id="approvalTrailPanel"
                                                 headerText="Approval Trail"
-                                                width="26rem">
+                                                width="100%"
+                                                class="sapUiResponsiveMargin">
 
                                                 <VBox>
 
                                                     <!-- L1 - Completed -->
-                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                    <VBox
+                                                        class="sapUiTinyMarginBottom">
 
                                                         <ObjectStatus
                                                             icon="sap-icon://message-success"
@@ -814,7 +551,9 @@
 
 
                                                     <!-- L2 - Completed -->
-                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                    <VBox
+                                                        class="sapUiTinyMarginBottom">
 
                                                         <ObjectStatus
                                                             icon="sap-icon://message-success"
@@ -834,7 +573,9 @@
 
 
                                                     <!-- L3 - Completed -->
-                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                    <VBox
+                                                        class="sapUiTinyMarginBottom">
 
                                                         <ObjectStatus
                                                             icon="sap-icon://message-success"
@@ -854,7 +595,9 @@
 
 
                                                     <!-- L4 - Current / Awaiting action -->
-                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                    <VBox
+                                                        class="sapUiTinyMarginBottom">
 
                                                         <ObjectStatus
                                                             icon="sap-icon://pending"
@@ -875,6 +618,7 @@
 
 
                                                     <!-- L5 - Pending -->
+
                                                     <VBox>
 
                                                         <ObjectStatus
@@ -899,6 +643,7 @@
                                         </uxap:blocks>
 
                                     </uxap:ObjectPageSubSection>
+
                                 </uxap:subSections>
 
                             </uxap:ObjectPageSection>
