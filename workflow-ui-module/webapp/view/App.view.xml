@@ -1,0 +1,918 @@
+<mvc:View
+    controllerName="app.workflowuimodule.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+
+    <App id="app">
+
+        <pages>
+
+            <Page
+                id="mainPage"
+                title="Employee Transfer Request">
+
+                <content>
+
+                    <uxap:ObjectPageLayout
+                        id="ObjectPageLayout"
+                        upperCaseAnchorBar="false"
+                        showTitleInHeaderContent="false"
+                        useTwoColumnsForLargeScreen="true">
+
+
+                        <!-- ================================================= -->
+                        <!-- HEADER TITLE -->
+                        <!-- ================================================= -->
+
+                        <uxap:headerTitle>
+
+                            <uxap:ObjectPageHeader
+                                id="headerForTransfer"
+                                objectTitle="Employee Transfer Request"
+                                showMarkers="true"
+                                markFavorite="true">
+
+                            </uxap:ObjectPageHeader>
+
+                        </uxap:headerTitle>
+
+
+                        <!-- ================================================= -->
+                        <!-- HEADER CONTENT -->
+                        <!-- ================================================= -->
+
+                        <uxap:headerContent>
+
+                            <layout:VerticalLayout
+                                class="sapUiMediumMarginEnd">
+
+                                <ObjectStatus
+                                    title="Transfer Request ID"
+                                    text="{context>/TransferRequestID}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                                <ObjectStatus
+                                    title="Employee ID"
+                                    text="{context>/EmployeeID}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                                <ObjectStatus
+                                    title="Department"
+                                    text="{context>/Department}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                                <ObjectStatus
+                                    title="Required Site"
+                                    text="{context>/RequiredSite}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                            </layout:VerticalLayout>
+
+
+                            <layout:VerticalLayout
+                                class="sapUiLargeMarginBegin">
+
+                                <ObjectStatus
+                                    title="Required Trade"
+                                    text="{context>/RequiredTrade}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                                <ObjectStatus
+                                    title="Relieving Trade"
+                                    text="{context>/RelievingTrade}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                                <ObjectStatus
+                                    title="Budgeted"
+                                    text="{context>/Budgeted}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                                <ObjectStatus
+                                    title="Requested By"
+                                    text="{context>/RequestedBy}"
+                                    class="sapUiMediumMarginBottom"/>
+
+                            </layout:VerticalLayout>
+
+                        </uxap:headerContent>
+
+
+                        <!-- ================================================= -->
+                        <!-- SECTIONS -->
+                        <!-- ================================================= -->
+
+                        <uxap:sections>
+
+
+                            <!-- ================================================= -->
+                            <!-- TRANSFER REQUEST DETAILS -->
+                            <!-- ================================================= -->
+
+                            <uxap:ObjectPageSection
+                                id="transferRequestSection"
+                                title="Transfer Request Details"
+                                titleUppercase="false">
+
+                                <uxap:subSections>
+
+                                    <uxap:ObjectPageSubSection
+                                        id="transferRequestSubSection"
+                                        title="Employee and Request Information"
+                                        titleUppercase="false">
+
+                                        <uxap:blocks>
+
+                                            <layout:Grid
+                                                defaultSpan="XL4 L4 M6 S12"
+                                                hSpacing="1"
+                                                vSpacing="1">
+
+
+                                                <!-- Transfer Request ID -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Transfer Request ID:"/>
+
+                                                    <Text
+                                                        text="{context>/TransferRequestID}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Employee ID -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Employee ID:"/>
+
+                                                    <Text
+                                                        text="{context>/EmployeeID}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Employee Name -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Employee Name:"/>
+
+                                                    <Text
+                                                        text="{context>/EmployeeName}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Department -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Department:"/>
+
+                                                    <Text
+                                                        text="{context>/Department}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Designation -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Designation:"/>
+
+                                                    <Text
+                                                        text="{context>/Designation}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Requested By -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Requested By:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestedBy}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Trade -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Trade:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredTrade}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Relieving Trade -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Trade:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingTrade}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Relieving Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Budgeted -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Budgeted:"/>
+
+                                                    <Text
+                                                        text="{context>/Budgeted}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Additional Details -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Additional Details:"/>
+
+                                                    <Text
+                                                        text="{context>/AdditionalDetails}"/>
+
+                                                </VBox>
+
+                                            </layout:Grid>
+
+                                        </uxap:blocks>
+
+                                    </uxap:ObjectPageSubSection>
+
+                                </uxap:subSections>
+
+                            </uxap:ObjectPageSection>
+
+
+                            <!-- ================================================= -->
+                            <!-- FINAL APPROVAL -->
+                            <!-- ================================================= -->
+
+                            <uxap:ObjectPageSection
+                                id="finalApprovalSection"
+                                title="Final Approval in SAP"
+                                titleUppercase="false">
+
+                                <uxap:subSections>
+
+
+                                    <!-- ================================================= -->
+                                    <!-- REQUEST INFORMATION -->
+                                    <!-- ================================================= -->
+
+                                    <uxap:ObjectPageSubSection
+                                        id="requestInformationSubSection"
+                                        title="Request Information"
+                                        titleUppercase="false">
+
+                                        <uxap:blocks>
+
+                                            <layout:Grid
+                                                defaultSpan="XL4 L4 M6 S12"
+                                                hSpacing="1"
+                                                vSpacing="1">
+
+
+                                                <!-- Request Type -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Request Type:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestType}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Request Status -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Request Status:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestStatus}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Requested By -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Requested By:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestedBy}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Requested Date -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Requested Date:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestedDate}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Department -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Department:"/>
+
+                                                    <Text
+                                                        text="{context>/Department}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Relieving Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Trade -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Trade:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredTrade}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Relieving Trade -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Trade:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingTrade}"/>
+
+                                                </VBox>
+
+                                            </layout:Grid>
+
+                                        </uxap:blocks>
+
+                                    </uxap:ObjectPageSubSection>
+
+
+                                    <!-- ================================================= -->
+                                    <!-- ALLOCATION AND COST -->
+                                    <!-- ================================================= -->
+
+                                    <uxap:ObjectPageSubSection
+                                        id="allocationSubSection"
+                                        title="Allocation and Cost Information"
+                                        titleUppercase="false">
+
+                                        <uxap:blocks>
+
+                                            <layout:Grid
+                                                defaultSpan="XL4 L4 M6 S12"
+                                                hSpacing="1"
+                                                vSpacing="1">
+
+
+                                                <!-- Allotted Number -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Allotted Number:"/>
+
+                                                    <Text
+                                                        text="{context>/AllottedNumber}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Active Available -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Active Available:"/>
+
+                                                    <Text
+                                                        text="{context>/ActiveAvailable}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Cost Centre -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Cost Centre:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredCostCentre}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Budgeted -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Budgeted:"/>
+
+                                                    <Text
+                                                        text="{context>/Budgeted}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Additional Details -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Additional Details:"/>
+
+                                                    <Text
+                                                        text="{context>/AdditionalDetails}"/>
+
+                                                </VBox>
+
+                                            </layout:Grid>
+
+                                        </uxap:blocks>
+
+                                    </uxap:ObjectPageSubSection>
+
+
+                                    <!-- ================================================= -->
+                                    <!-- TRANSFER INFORMATION -->
+                                    <!-- ================================================= -->
+
+                                    <uxap:ObjectPageSubSection
+                                        id="transferInformationSubSection"
+                                        title="Transfer Information"
+                                        titleUppercase="false">
+
+                                        <uxap:blocks>
+
+                                            <layout:Grid
+                                                defaultSpan="XL4 L4 M6 S12"
+                                                hSpacing="1"
+                                                vSpacing="1">
+
+
+                                                <!-- Transfer Type -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Request Type:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestType}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Requested Date -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Requested Date:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestedDate}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Current Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Current Trade -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Trade:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingTrade}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Trade -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Trade:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredTrade}"/>
+
+                                                </VBox>
+
+                                            </layout:Grid>
+
+                                        </uxap:blocks>
+
+                                    </uxap:ObjectPageSubSection>
+
+
+                                    <!-- ================================================= -->
+                                    <!-- EMPLOYEE INFORMATION -->
+                                    <!-- ================================================= -->
+
+                                    <uxap:ObjectPageSubSection
+                                        id="employeeInformationSubSection"
+                                        title="Employee Information"
+                                        titleUppercase="false">
+
+                                        <uxap:blocks>
+
+                                            <layout:Grid
+                                                defaultSpan="XL4 L4 M6 S12"
+                                                hSpacing="1"
+                                                vSpacing="1">
+
+
+                                                <!-- Employee Name -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Employee Name:"/>
+
+                                                    <Text
+                                                        text="{context>/EmployeeName}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Employee ID -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Employee ID:"/>
+
+                                                    <Text
+                                                        text="{context>/EmployeeID}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Department -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Department:"/>
+
+                                                    <Text
+                                                        text="{context>/Department}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Designation -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Designation:"/>
+
+                                                    <Text
+                                                        text="{context>/Designation}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Requested By -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Requested By:"/>
+
+                                                    <Text
+                                                        text="{context>/RequestedBy}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Required Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Required Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RequiredSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Relieving Site -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Relieving Site:"/>
+
+                                                    <Text
+                                                        text="{context>/RelievingSite}"/>
+
+                                                </VBox>
+
+
+                                                <!-- Additional Details -->
+
+                                                <VBox>
+
+                                                    <Label
+                                                        text="Additional Details:"/>
+
+                                                    <Text
+                                                        text="{context>/AdditionalDetails}"/>
+
+                                                </VBox>
+
+                                            </layout:Grid>
+
+                                        </uxap:blocks>
+
+                                    </uxap:ObjectPageSubSection>
+
+
+                                    <!-- ================================================= -->
+                                    <!-- CEO APPROVAL -->
+                                    <!-- ================================================= -->
+
+                                    <!-- ================================================= -->
+                                    <!-- APPROVAL INFORMATION -->
+                                    <!-- ================================================= -->
+
+                                    <uxap:ObjectPageSubSection
+                                        id="approvalInformationSubSection"
+                                        title="Approval Information"
+                                        titleUppercase="false">
+
+                                        <uxap:blocks>
+
+                                            <!-- ============================================= -->
+                                            <!-- APPROVAL TRAIL CARD                          -->
+                                            <!-- ============================================= -->
+
+                                            <Panel
+                                                id="approvalTrailPanel"
+                                                headerText="Approval Trail"
+                                                width="26rem">
+
+                                                <VBox>
+
+                                                    <!-- L1 - Completed -->
+                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                        <ObjectStatus
+                                                            icon="sap-icon://message-success"
+                                                            text="{approval>/L1ApprovedBy}"
+                                                            state="Success"/>
+
+                                                        <Text
+                                                            text="L1 - Facility In-charge"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                        <ObjectStatus
+                                                            text="✓ {approval>/L1ApprovedDate}"
+                                                            state="Success"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                    </VBox>
+
+
+                                                    <!-- L2 - Completed -->
+                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                        <ObjectStatus
+                                                            icon="sap-icon://message-success"
+                                                            text="{approval>/L2ApprovedBy}"
+                                                            state="Success"/>
+
+                                                        <Text
+                                                            text="L2 - Property Manager"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                        <ObjectStatus
+                                                            text="✓ {approval>/L2ApprovedDate}"
+                                                            state="Success"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                    </VBox>
+
+
+                                                    <!-- L3 - Completed -->
+                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                        <ObjectStatus
+                                                            icon="sap-icon://message-success"
+                                                            text="{approval>/L3ApprovedBy}"
+                                                            state="Success"/>
+
+                                                        <Text
+                                                            text="L3 - Regional Head"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                        <ObjectStatus
+                                                            text="✓ {approval>/L3ApprovedDate}"
+                                                            state="Success"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                    </VBox>
+
+
+                                                    <!-- L4 - Current / Awaiting action -->
+                                                    <VBox class="sapUiTinyMarginBottom">
+
+                                                        <ObjectStatus
+                                                            icon="sap-icon://pending"
+                                                            text="{approval>/L4ApprovedBy}"
+                                                            state="Information"/>
+
+                                                        <Text
+                                                            text="L4 - HR Manager"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                        <ObjectStatus
+                                                            icon="sap-icon://hint"
+                                                            text="Awaiting action"
+                                                            state="Information"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                    </VBox>
+
+
+                                                    <!-- L5 - Pending -->
+                                                    <VBox>
+
+                                                        <ObjectStatus
+                                                            icon="sap-icon://circle-task-2"
+                                                            text="{approval>/L5ApprovedBy}"
+                                                            state="None"/>
+
+                                                        <Text
+                                                            text="L5 - Chief Executive"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                        <Text
+                                                            text="Pending L4"
+                                                            class="sapUiTinyMarginBegin"/>
+
+                                                    </VBox>
+
+                                                </VBox>
+
+                                            </Panel>
+
+                                        </uxap:blocks>
+
+                                    </uxap:ObjectPageSubSection>
+                                </uxap:subSections>
+
+                            </uxap:ObjectPageSection>
+
+                        </uxap:sections>
+
+                    </uxap:ObjectPageLayout>
+
+                </content>
+
+            </Page>
+
+        </pages>
+
+    </App>
+
+</mvc:View>

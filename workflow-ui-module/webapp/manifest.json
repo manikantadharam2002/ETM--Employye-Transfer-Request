@@ -1,0 +1,299 @@
+{
+    "_version": "1.26.0",
+    "sap.app": {
+        "id": "app.workflowuimodule",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.4"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.8.4",
+            "toolsId": "5969c18a-72a8-44ab-b1f1-2630179e3cee"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.82.2",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "app.workflowuimodule.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "app.workflowuimodule.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteMyTaskUI",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetMyTaskUI"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMyTaskUI": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "MyTaskUI",
+                    "viewName": "MyTaskUI"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "app.workflowuimodule.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "etm"
+    },
+    "sap.bpa.task": {
+        "_version": "1.0.0",
+
+        "outcomes": [
+            {
+                "id": "approve",
+                "label": "Approve"
+            },
+            {
+                "id": "reject",
+                "label": "Reject"
+            }
+        ],
+
+        "inputs": {
+            "$schema": "http://json-schema.org/draft-07/schema",
+            "title": "Employee Transfer Approval Input",
+            "type": "object",
+
+            "required": [
+                "TransferRequestID",
+                "EmployeeID",
+                "EmployeeName",
+                "Department",
+                "Designation",
+                "RequiredSite",
+                "RelievingSite",
+                "RequiredTrade",
+                "RelievingTrade",
+                "Budgeted",
+                "RequestedBy",
+                "RequestedDate",
+                "RequestType",
+                "RequestStatus",
+                "RequiredCostCentre",
+                "AllottedNumber",
+                "ActiveAvailable",
+                "AdditionalDetails"
+            ],
+
+            "properties": {
+
+                "TransferRequestID": {
+                    "type": "string",
+                    "title": "Transfer Request ID",
+                    "description": "Unique employee transfer request ID"
+                },
+
+                "EmployeeID": {
+                    "type": "string",
+                    "title": "Employee ID",
+                    "description": "Employee identification number"
+                },
+
+                "EmployeeName": {
+                    "type": "string",
+                    "title": "Employee Name",
+                    "description": "Name of the employee"
+                },
+
+                "Department": {
+                    "type": "string",
+                    "title": "Department",
+                    "description": "Employee department"
+                },
+
+                "Designation": {
+                    "type": "string",
+                    "title": "Designation",
+                    "description": "Employee designation"
+                },
+
+                "RequiredSite": {
+                    "type": "string",
+                    "title": "Required Site",
+                    "description": "Destination site required for the employee transfer"
+                },
+
+                "RelievingSite": {
+                    "type": "string",
+                    "title": "Relieving Site",
+                    "description": "Current site from which the employee is being transferred"
+                },
+
+                "RequiredTrade": {
+                    "type": "string",
+                    "title": "Required Trade",
+                    "description": "Trade required at the destination site"
+                },
+
+                "RelievingTrade": {
+                    "type": "string",
+                    "title": "Relieving Trade",
+                    "description": "Current employee trade"
+                },
+
+                "Budgeted": {
+                    "type": "number",
+                    "title": "Budgeted",
+                    "description": "Budgeted amount or budget value"
+                },
+
+                "RequestedBy": {
+                    "type": "string",
+                    "title": "Requested By",
+                    "description": "User who submitted the transfer request"
+                },
+
+                "RequestedDate": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Requested Date",
+                    "description": "Date on which the transfer request was submitted"
+                },
+
+                "RequestType": {
+                    "type": "string",
+                    "title": "Request Type",
+                    "description": "Type of employee transfer request"
+                },
+
+                "RequestStatus": {
+                    "type": "string",
+                    "title": "Request Status",
+                    "description": "Current status of the transfer request"
+                },
+
+                "RequiredCostCentre": {
+                    "type": "string",
+                    "title": "Required Cost Centre",
+                    "description": "Cost centre required at the destination site"
+                },
+
+                "AllottedNumber": {
+                    "type": "number",
+                    "title": "Allotted Number",
+                    "description": "Allotted number associated with the transfer request"
+                },
+
+                "ActiveAvailable": {
+                    "type": "string",
+                    "title": "Active Available",
+                    "description": "Availability status of the employee or position"
+                },
+
+                "AdditionalDetails": {
+                    "type": "string",
+                    "title": "Additional Details",
+                    "description": "Additional information related to the transfer request"
+                }
+            }
+        },
+
+        "outputs": {
+            "$schema": "http://json-schema.org/draft-07/schema",
+            "title": "Employee Transfer Approval Output",
+            "type": "object",
+
+            "required": [
+                "comment"
+            ],
+
+            "properties": {
+
+                "comment": {
+                    "type": "string",
+                    "title": "CEO Comment",
+                    "description": "Comment entered by the CEO during approval or rejection"
+                }
+            }
+        },
+
+        "category": "approval"
+    }
+}
